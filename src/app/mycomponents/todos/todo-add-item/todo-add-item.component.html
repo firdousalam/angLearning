@@ -1,0 +1,23 @@
+<p>add todo items components</p>
+<div>
+<form (ngSubmit) = "onSubmit();">
+    <div class="form-group">
+      <label for="sno">sno</label>
+      <input type="number" class="form-control" [(ngModel)] = "sno" id="sno" aria-describedby="emailHelp1" placeholder="Enter sno" [ngModelOptions]="{standalone: true}">
+    
+    </div>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control"  [(ngModel)] = "title" id="title" aria-describedby="emailHelp2" placeholder="Enter Title" [ngModelOptions]="{standalone: true}">
+      
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control"  [(ngModel)] = "description" id="description" aria-describedby="emailHelp" placeholder="Enter Description"  [ngModelOptions]="{standalone: true}">
+      
+      </div>
+   
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
