@@ -9,7 +9,12 @@ import { Todo } from '../../Todo'
 export class TodosComponent implements OnInit {
  todos :Todo[];
   constructor() { 
-    this.todos = []
+    let todosItem = localStorage.getItem("todos");
+    if(todosItem){
+    this.todos = JSON.parse(localStorage.getItem("todos")!);
+    }else{
+      this.todos = [];
+    }
   }
 
   ngOnInit(): void {
@@ -18,8 +23,10 @@ export class TodosComponent implements OnInit {
     console.log(todo)
     let TodoIndex = this.todos.indexOf(todo);
     this.todos.splice(TodoIndex,1);
+    localStorage.setItem("todos",JSON.stringify(this.todos));
   }
   addToDo(todo : Todo){
     this.todos.push(todo);
+    localStorage.setItem("todos",JSON.stringify(this.todos));
   }
 }
